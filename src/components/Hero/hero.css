@@ -1,0 +1,158 @@
+.hero__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__nav {
+  margin: 3% 0;
+}
+
+.hero__contents {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 2rem;
+  width: 100%;
+}
+
+/* HERO LEFT STYLES */
+.hero__content-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  width: 100%;
+  gap: 1rem;
+}
+
+.image__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.left__top,
+.left__bottom {
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  height: 13rem;
+  width: 10rem;
+}
+
+.image__right {
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+}
+/* END OF HERO LEFT STYLES */
+
+/* HERO CONTENTS RIGHT */
+.hero__content-right {
+  height: 100%;
+  flex-basis: 50%;
+}
+
+.hero__content-right small {
+  font-weight: 600;
+}
+
+.right__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.99rem;
+}
+
+.right__inner a {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--black-color);
+  padding: 0.5rem;
+  font-size: 0.5em;
+}
+
+.right__inner button {
+  padding: 0.7rem;
+  background: transparent;
+  border: 1px solid black;
+  font-size: 0.77em;
+  font-weight: 600;
+  cursor: pointer;
+  /* margin-bottom: 2rem; */
+}
+
+.hero__content-right p {
+  margin: 1.5rem 0;
+}
+
+/* END OF HERO CONTENTS RIGHT */
+
+/* MEDIA QUERIES (Tablets) */
+@media (max-width: 1024px) {
+  .hero__contents {
+    gap: 1rem;
+  }
+
+  .hero__content-left {
+    gap: 0.7rem;
+  }
+
+  .image__left {
+    gap: 0.7rem;
+  }
+
+  .left__top,
+  .left__bottom {
+    width: 8rem;
+  }
+}
+
+/* MEDIA QUERIES (Phones) */
+@media (max-width: 768px) {
+  .hero__contents {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero__content-left {
+    gap: 0;
+  }
+
+  .hero__content-right {
+    flex-basis: 40%;
+  }
+
+  .image__left {
+    gap: 0;
+  }
+
+  .image__right img {
+    margin: 0;
+    /* height: 30rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color); */
+  }
+
+  .left__top,
+  .left__bottom {
+    display: none;
+  }
+
+  .nav__items li:nth-child(2),
+  .nav__items li:nth-child(3),
+  .nav__items li:nth-child(4) {
+    display: none;
+  }
+
+  .right__inner b {
+    font-size: 0.77rem;
+  }
+}
