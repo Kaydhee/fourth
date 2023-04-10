@@ -1,10 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../../App";
 import "./hero.css";
 import image1 from "../../assets/header.png";
 import image2 from "../../assets/header3.png";
 
 const Hero = () => {
+  const { setCartCount } = useContext(AppContext);
+
+  // const [cart, setCart] = useState(0);
+
   const [count, setCount] = useState(0);
 
   return (
@@ -90,7 +96,15 @@ const Hero = () => {
               coffee date, meeting with friends, an important event, etc.
             </p>
 
-            <button className="btn right__btn">Add to cart</button>
+            <button
+              className="btn right__btn"
+              onClick={() => {
+                setCartCount((original) => original + 1);
+                console.log("i was clicked");
+              }}
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>

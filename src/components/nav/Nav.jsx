@@ -1,4 +1,8 @@
 import React from "react";
+
+import { useContext } from "react";
+import { AppContext } from "../../App";
+
 import "./nav.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
@@ -8,6 +12,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Nav = () => {
+  const { cartCount } = useContext(AppContext);
+
   return (
     <nav className="navbar">
       <div className="container nav__container">
@@ -47,7 +53,7 @@ const Nav = () => {
 
           <li className="cart">
             <AiOutlineShoppingCart />
-            <span>0</span>
+            <span>{cartCount}</span>
           </li>
         </ul>
       </div>

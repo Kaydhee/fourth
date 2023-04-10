@@ -44,7 +44,7 @@
   justify-content: center;
 }
 
-.cart span {
+/* .cart span {
   position: absolute;
   background: var(--primary-color);
   color: var(--black-color);
@@ -52,7 +52,7 @@
   z-index: 1;
   top: -0.5rem;
   right: -0.5rem;
-  padding: 0.4rem;
+  padding: 0.5rem;
   font-size: 0.55rem;
   width: 10px;
   height: 10px;
@@ -60,7 +60,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .open__icon,
 .close__icon {
