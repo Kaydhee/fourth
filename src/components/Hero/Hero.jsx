@@ -9,9 +9,30 @@ import image2 from "../../assets/header3.png";
 const Hero = () => {
   const { setCartCount } = useContext(AppContext);
 
-  // const [cart, setCart] = useState(0);
-
   const [count, setCount] = useState(0);
+
+  const [cart, setCart] = useState(localStorage.getItem("item") || []);
+  const [item, setItem] = useState("");
+  const addItem = () => {
+    cart.length === 0
+      ? localStorage.setItem("item", JSON.stringify(item))
+      : "item";
+  };
+
+  const addNew = (newItem) => {
+    let cart = JSON.parse(localStorage.getItem("item"));
+
+    // let newItem = {
+    //   name: "Daniel",
+    //   Age: 20,
+    // };
+    setCart(newItem);
+    cart.push(newItem);
+
+    localStorage.setItem("item", JSON.stringify(cart));
+
+    setItem(cart);
+  };
 
   return (
     <section>
@@ -100,11 +121,15 @@ const Hero = () => {
               className="btn right__btn"
               onClick={() => {
                 setCartCount((original) => original + 1);
-                console.log("i was clicked");
+                addItem();
               }}
             >
               Add to cart
             </button>
+
+            <button onClick={addNew}>add here</button>
+
+            <h1>sucessfully added {cart.name} to cart </h1>
           </div>
         </div>
       </div>
