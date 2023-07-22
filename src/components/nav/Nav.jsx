@@ -1,64 +1,67 @@
-import React from "react";
+import React from 'react';
 
-import { useContext } from "react";
-import { AppContext } from "../../App";
+import { useContext } from 'react';
+import { AppContext } from '../../App';
 
-import "./nav.css";
-import { AiOutlineSearch } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { AiOutlineMenu } from "react-icons/ai";
-import { AiOutlineClose } from "react-icons/ai";
+import './nav.css';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Nav = () => {
-  const { cartCount } = useContext(AppContext);
+	return (
+		<nav className='navbar'>
+			<div className='container nav__container'>
+				<div className='language__option'>
+					<small>Language</small>
 
-  return (
-    <nav className="navbar">
-      <div className="container nav__container">
-        <div className="language__option">
-          <small>Language</small>
+					<select
+						name='language'
+						id='language'>
+						<option>English</option>
+						<option>Ibibio</option>
+						<option>Yoruba</option>
+						<option>Igbo</option>
+						<option>Hausa</option>
+					</select>
+				</div>
 
-          <select name="language" id="language">
-            <option>English</option>
-            <option>Ibibio</option>
-            <option>Yoruba</option>
-            <option>Igbo</option>
-            <option>Hausa</option>
-          </select>
-        </div>
+				{/* Hamburger/close icon for mobile */}
+				<AiOutlineMenu className='open__icon' />
+				<AiOutlineClose className='close__icon' />
 
-        {/* Hamburger/close icon for mobile */}
-        <AiOutlineMenu className="open__icon" />
-        <AiOutlineClose className="close__icon" />
+				<div className='logo'>
+					<h2>four-th</h2>
+				</div>
 
-        <div className="logo">
-          <h2>four-th</h2>
-        </div>
+				<ul className='nav__items'>
+					<li className='search'>
+						<AiOutlineSearch />
+						<input
+							type='text'
+							placeholder='Search'
+						/>
+					</li>
 
-        <ul className="nav__items">
-          <li className="search">
-            <AiOutlineSearch />
-            <input type="text" placeholder="Search" />
-          </li>
+					<li>
+						<AiOutlineUser />
+					</li>
 
-          <li>
-            <AiOutlineUser />
-          </li>
+					<li>
+						<AiOutlineHeart />
+					</li>
 
-          <li>
-            <AiOutlineHeart />
-          </li>
-
-          <li className="cart">
-            <AiOutlineShoppingCart />
-            <span>{cartCount}</span>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
+					<li className='cart'>
+						<AiOutlineShoppingCart />
+						<span></span>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	);
 };
 
 export default Nav;
